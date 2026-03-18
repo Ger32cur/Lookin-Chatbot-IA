@@ -1,35 +1,28 @@
 import React from 'react';
-import { 
-  Navbar, 
-  ServiceCard, 
-  DashboardMockup, 
-  ChatDemo,
+import {
+  Navbar,
+  ServiceCard,
+  DashboardMockup,
   View
 } from './components/UI';
-import { 
-  Bot, 
-  Zap, 
-  MessageSquare, 
-  Instagram, 
-  Users, 
-  Layers, 
-  BarChart3, 
+import {
+  Bot,
+  Zap,
+  MessageSquare,
+  Instagram,
+  Users,
+  Layers,
+  BarChart3,
   Headset,
   CheckCircle2,
   ArrowRight,
   LayoutDashboard,
   Database,
   Workflow,
-  Globe,
-  Mail,
-  Phone,
-  Calendar,
-  Clock,
   Search,
   Bell,
   Settings,
   LogOut,
-  Plus,
   MoreVertical
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -39,7 +32,7 @@ const LandingView = ({ onNavigate }: { onNavigate: (view: View) => void }) => {
   return (
     <div className="min-h-screen bg-lookin-bg selection:bg-lookin-primary selection:text-lookin-deep">
       <Navbar onNavigate={onNavigate} />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 overflow-hidden relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-full opacity-20 pointer-events-none">
@@ -76,7 +69,7 @@ const LandingView = ({ onNavigate }: { onNavigate: (view: View) => void }) => {
           </motion.div>
 
           {/* Badges */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -107,46 +100,46 @@ const LandingView = ({ onNavigate }: { onNavigate: (view: View) => void }) => {
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">Soluciones End-to-End</h2>
             <p className="text-white/50 max-w-2xl mx-auto">Diseñamos el ecosistema digital que tu empresa necesita para escalar sin límites.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ServiceCard 
-              icon={Bot} 
-              title="Consultoría IA" 
+            <ServiceCard
+              icon={Bot}
+              title="Consultoría IA"
               description="Diseñamos soluciones con IA adaptadas al flujo real de tu negocio y objetivos comerciales."
             />
-            <ServiceCard 
-              icon={MessageSquare} 
-              title="Chatbots Web" 
+            <ServiceCard
+              icon={MessageSquare}
+              title="Chatbots Web"
               description="Implementamos asistentes conversacionales para captar y convertir clientes 24/7."
             />
-            <ServiceCard 
-              icon={Zap} 
-              title="WhatsApp Auto" 
+            <ServiceCard
+              icon={Zap}
+              title="WhatsApp Auto"
               description="Automatización completa de ventas y soporte en el canal más usado del mundo."
             />
-            <ServiceCard 
-              icon={Instagram} 
-              title="Instagram Flow" 
+            <ServiceCard
+              icon={Instagram}
+              title="Instagram Flow"
               description="Convertí tus comentarios y DMs en oportunidades de venta automáticas."
             />
-            <ServiceCard 
-              icon={Database} 
-              title="CRM con IA" 
+            <ServiceCard
+              icon={Database}
+              title="CRM con IA"
               description="Gestión inteligente de leads con seguimiento automático y scoring predictivo."
             />
-            <ServiceCard 
-              icon={Workflow} 
-              title="Integraciones" 
+            <ServiceCard
+              icon={Workflow}
+              title="Integraciones"
               description="Conectamos tus herramientas favoritas para que la información fluya sin fricción."
             />
-            <ServiceCard 
-              icon={Layers} 
-              title="Embudos de Leads" 
+            <ServiceCard
+              icon={Layers}
+              title="Embudos de Leads"
               description="Estructuramos el camino del cliente desde el primer contacto hasta el cierre."
             />
-            <ServiceCard 
-              icon={Headset} 
-              title="Asistentes Internos" 
+            <ServiceCard
+              icon={Headset}
+              title="Asistentes Internos"
               description="IA entrenada con tu base de conocimientos para ayudar a tu equipo de soporte."
             />
           </div>
@@ -158,7 +151,10 @@ const LandingView = ({ onNavigate }: { onNavigate: (view: View) => void }) => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2">
-              <h2 className="text-4xl font-bold font-display mb-8 leading-tight">Nuestra Metodología <br /><span className="text-lookin-primary">Paso a Paso</span></h2>
+              <h2 className="text-4xl font-bold font-display mb-8 leading-tight">
+                Nuestra Metodología <br />
+                <span className="text-lookin-primary">Paso a Paso</span>
+              </h2>
               <div className="space-y-12">
                 {[
                   { step: '01', title: 'Diagnóstico Estratégico', desc: 'Analizamos tus procesos actuales para identificar cuellos de botella y oportunidades de IA.' },
@@ -188,14 +184,70 @@ const LandingView = ({ onNavigate }: { onNavigate: (view: View) => void }) => {
         </div>
       </section>
 
-      {/* Demo Section */}
+      {/* Demo Section - Chat embebido */}
       <section id="demo" className="py-24 bg-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">Probá la Experiencia Lookin</h2>
-            <p className="text-white/50 max-w-2xl mx-auto">Interactuá con nuestro asistente demo y descubrí cómo podemos transformar tu atención al cliente.</p>
+            <p className="text-white/50 max-w-2xl mx-auto">
+              Interactuá con nuestro asistente demo y descubrí cómo podemos transformar tu atención al cliente.
+            </p>
           </div>
-          <ChatDemo />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_0_30px_rgba(0,217,125,0.12)]">
+              <h3 className="text-2xl font-semibold text-white mb-4">Qué puede hacer este asistente</h3>
+
+              <div className="space-y-4 text-white/80">
+                <div className="rounded-2xl border border-white/10 bg-[#12123a] p-4">
+                  Responder preguntas frecuentes sobre servicios, talleres, automatizaciones y próximos pasos.
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-[#12123a] p-4">
+                  Guiar al usuario hacia una inscripción, contacto comercial o solicitud de demo.
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-[#12123a] p-4">
+                  Mantener el contexto de la conversación con memoria para responder de forma más natural.
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <p className="text-sm uppercase tracking-[0.2em] text-white/40 mb-3">Preguntas sugeridas</p>
+
+                <div className="flex flex-wrap gap-3">
+                  <button className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10 transition">
+                    Quiero info del taller
+                  </button>
+                  <button className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10 transition">
+                    ¿Cómo me anoto?
+                  </button>
+                  <button className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10 transition">
+                    ¿Qué temas se tratan?
+                  </button>
+                  <button className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 hover:bg-white/10 transition">
+                    Necesito automatizar mi atención
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 overflow-hidden shadow-[0_0_30px_rgba(0,217,125,0.12)]">
+              <div className="flex items-center justify-between border-b border-white/10 bg-gradient-to-r from-[#00D97D]/20 to-[#00A67D]/10 px-6 py-4">
+                <div>
+                  <h3 className="text-lg font-semibold text-white">Asistente The Wellness Lab</h3>
+                  <p className="text-sm text-white/60">Chat en vivo impulsado por IA</p>
+                </div>
+                <div className="h-3 w-3 rounded-full bg-[#00D97D] shadow-[0_0_12px_#00D97D]" />
+              </div>
+
+              <iframe
+                src="https://chatbotlookin.app.n8n.cloud/webhook/841a2b93-d431-4aac-844c-f9c83acae827/chat"
+                title="Chatbot Lookin"
+                className="w-full h-[700px] bg-[#0E0E30]"
+                style={{ border: 'none' }}
+                allow="clipboard-write"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -225,7 +277,9 @@ const LandingView = ({ onNavigate }: { onNavigate: (view: View) => void }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-lookin-primary/5 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-black font-display mb-8 tracking-tight">¿Listo para escalar tu negocio?</h2>
-          <p className="text-xl text-lookin-soft/60 mb-12">Unite a las empresas que ya están ahorrando horas de trabajo y multiplicando sus ventas con Lookin.</p>
+          <p className="text-xl text-lookin-soft/60 mb-12">
+            Unite a las empresas que ya están ahorrando horas de trabajo y multiplicando sus ventas con Lookin.
+          </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button className="btn-primary px-12 py-4 text-lg">Agendar Reunión</button>
             <button className="btn-secondary px-12 py-4 text-lg">Ver Precios</button>
@@ -242,7 +296,9 @@ const LandingView = ({ onNavigate }: { onNavigate: (view: View) => void }) => {
                 <div className="w-8 h-8 bg-gradient-to-br from-lookin-primary to-lookin-secondary rounded-lg flex items-center justify-center shadow-lg shadow-lookin-primary/20">
                   <span className="text-lookin-deep font-black text-xl font-script pt-0.5">in.</span>
                 </div>
-                <span className="text-xl font-black font-display tracking-tight">Look<span className="text-gradient font-script text-2xl lowercase">in.</span></span>
+                <span className="text-xl font-black font-display tracking-tight">
+                  Look<span className="text-gradient font-script text-2xl lowercase">in.</span>
+                </span>
               </div>
               <p className="text-lookin-soft/40 text-sm leading-relaxed">
                 Liderando la revolución de la IA y automatización para el mercado hispano.
@@ -270,8 +326,14 @@ const LandingView = ({ onNavigate }: { onNavigate: (view: View) => void }) => {
               <h5 className="font-bold mb-6 font-display">Newsletter</h5>
               <p className="text-sm text-lookin-soft/40 mb-4">Recibí tips de automatización cada semana.</p>
               <div className="flex gap-2">
-                <input type="email" placeholder="Email" className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-xs flex-1 outline-none focus:border-lookin-primary/50 transition-colors" />
-                <button className="bg-lookin-primary text-lookin-deep px-4 py-2 rounded-lg text-xs font-bold hover:opacity-90 transition-opacity">OK</button>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-xs flex-1 outline-none focus:border-lookin-primary/50 transition-colors"
+                />
+                <button className="bg-lookin-primary text-lookin-deep px-4 py-2 rounded-lg text-xs font-bold hover:opacity-90 transition-opacity">
+                  OK
+                </button>
               </div>
             </div>
           </div>
@@ -299,9 +361,11 @@ const DashboardView = ({ onNavigate }: { onNavigate: (view: View) => void }) => 
           <div className="w-8 h-8 bg-gradient-to-br from-lookin-primary to-lookin-secondary rounded-lg flex items-center justify-center shadow-lg shadow-lookin-primary/20 group-hover:scale-105 transition-transform">
             <span className="text-lookin-deep font-black text-xl font-script pt-0.5">in.</span>
           </div>
-          <span className="text-xl font-black font-display tracking-tight">Look<span className="text-gradient font-script text-2xl lowercase">in.</span></span>
+          <span className="text-xl font-black font-display tracking-tight">
+            Look<span className="text-gradient font-script text-2xl lowercase">in.</span>
+          </span>
         </div>
-        
+
         <nav className="flex-1 px-4 space-y-2">
           {[
             { icon: LayoutDashboard, label: 'Overview', active: true },
@@ -312,8 +376,8 @@ const DashboardView = ({ onNavigate }: { onNavigate: (view: View) => void }) => 
             { icon: Database, label: 'Base de Conocimiento' },
             { icon: BarChart3, label: 'Métricas' },
           ].map((item, i) => (
-            <button 
-              key={i} 
+            <button
+              key={i}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                 item.active ? 'bg-lookin-primary/10 text-lookin-primary' : 'text-lookin-muted hover:bg-white/5 hover:text-white'
               }`}
@@ -329,7 +393,10 @@ const DashboardView = ({ onNavigate }: { onNavigate: (view: View) => void }) => 
             <Settings size={20} />
             Configuración
           </button>
-          <button onClick={() => onNavigate('landing')} className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-red-400/60 hover:bg-red-400/10 hover:text-red-400 transition-all">
+          <button
+            onClick={() => onNavigate('landing')}
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-red-400/60 hover:bg-red-400/10 hover:text-red-400 transition-all"
+          >
             <LogOut size={20} />
             Cerrar Sesión
           </button>
@@ -346,13 +413,13 @@ const DashboardView = ({ onNavigate }: { onNavigate: (view: View) => void }) => 
               Live
             </div>
           </div>
-          
+
           <div className="flex items-center gap-6">
             <div className="relative hidden md:block">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-white/20" size={16} />
-              <input 
-                type="text" 
-                placeholder="Buscar leads..." 
+              <input
+                type="text"
+                placeholder="Buscar leads..."
                 className="bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-lookin-primary/50 w-64 transition-colors"
               />
             </div>
@@ -462,7 +529,7 @@ const DashboardView = ({ onNavigate }: { onNavigate: (view: View) => void }) => 
                       <div className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full" />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <div className="flex justify-between text-[10px] uppercase tracking-widest text-lookin-muted">
                       <span>Carga de Trabajo</span>
@@ -473,14 +540,18 @@ const DashboardView = ({ onNavigate }: { onNavigate: (view: View) => void }) => 
                     </div>
                   </div>
 
-                  <button className="w-full btn-secondary py-2 text-xs border-white/10 hover:border-lookin-primary/30">Configurar IA</button>
+                  <button className="w-full btn-secondary py-2 text-xs border-white/10 hover:border-lookin-primary/30">
+                    Configurar IA
+                  </button>
                 </div>
               </div>
 
               <div className="bg-gradient-to-br from-lookin-primary/10 to-lookin-secondary/10 border border-white/10 rounded-3xl p-6 relative overflow-hidden group">
                 <div className="relative z-10">
                   <h4 className="font-bold font-display mb-2">Nueva Automatización</h4>
-                  <p className="text-xs text-lookin-soft/60 mb-6 leading-relaxed">Conectá un nuevo canal y empezá a automatizar tus flujos en minutos.</p>
+                  <p className="text-xs text-lookin-soft/60 mb-6 leading-relaxed">
+                    Conectá un nuevo canal y empezá a automatizar tus flujos en minutos.
+                  </p>
                   <button className="flex items-center gap-2 text-sm font-bold text-lookin-primary group-hover:gap-3 transition-all">
                     Explorar Templates <ArrowRight size={16} />
                   </button>
