@@ -1,3 +1,4 @@
+import N8nChatWidget from './components/N8nChatWidget';
 import React from 'react';
 import {
   Navbar,
@@ -239,13 +240,9 @@ const LandingView = ({ onNavigate }: { onNavigate: (view: View) => void }) => {
                 <div className="h-3 w-3 rounded-full bg-[#00D97D] shadow-[0_0_12px_#00D97D]" />
               </div>
 
-              <iframe
-                src="https://chatbotlookin.app.n8n.cloud/webhook/841a2b93-d431-4aac-844c-f9c83acae827/chat"
-                title="Chatbot Lookin"
-                className="w-full h-[700px] bg-[#0E0E30]"
-                style={{ border: 'none' }}
-                allow="clipboard-write"
-              />
+              <div className="w-full h-[700px] bg-[#0E0E30]">
+  <N8nChatWidget />
+</div>
             </div>
           </div>
         </div>
