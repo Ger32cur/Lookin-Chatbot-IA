@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif; /* Fallback for Coolvetica */
+  --font-script: "Caveat", cursive;
+
+  --color-lookin-bg: #0B0B22;
+  --color-lookin-deep: #050514;
+  --color-lookin-primary: #00F5A0;
+  --color-lookin-secondary: #00A67D;
+  --color-lookin-accent: #0AA98A;
+  --color-lookin-white: #FFFFFF;
+  --color-lookin-soft: #E8E8EE;
+  --color-lookin-muted: #AEB3C2;
+}
+
+@layer base {
+  body {
+    @apply bg-lookin-bg text-white font-sans antialiased;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-lookin-primary to-lookin-secondary;
+}
+
+.btn-primary {
+  @apply px-6 py-3 rounded-xl bg-gradient-to-r from-lookin-primary to-lookin-secondary text-lookin-deep font-bold hover:opacity-90 transition-all shadow-lg shadow-lookin-primary/20;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-xl border border-white/20 hover:bg-white/5 transition-all font-medium text-white;
+}
+
+.lookin-glow {
+  box-shadow: 0 0 30px rgba(0, 245, 160, 0.25);
+}
